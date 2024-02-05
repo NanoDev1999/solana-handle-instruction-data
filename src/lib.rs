@@ -25,7 +25,8 @@ pub fn process_instruction(
     match instruction {
         MovieInstruction::AddMovieReview { title, rating, description } => {
             // Make a call to `add_move_review` function
-            add_movie_review(program_id, accounts, title, rating, description)
+            let add_movie_review_result = add_movie_review(program_id, accounts, title, rating, description);
+            msg!("add_movie_review_result: {:?}", add_movie_review_result);
         }
     }
 
